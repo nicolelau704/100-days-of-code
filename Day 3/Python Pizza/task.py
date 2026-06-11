@@ -38,7 +38,3 @@ else:
 
 #Display the total bill to the user
 print(f"The total bill for your pizza is ${bill}.")
-
-
-
-
