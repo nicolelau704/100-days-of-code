@@ -24,25 +24,25 @@ print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 
 choice = input("You've reached a fork in the road. Would you like to go left or right? (left/right) ")
-if choice == "right" or "Right" or "RIGHT":
+if choice == "right" or choice == "Right":
     print("You fell into a hole! Game over.")
-elif choice == "left" or "Left" or "LEFT":
+elif choice == "left" or choice == "Left":
     print("A huge lake appears just beyond the line of trees.\n"
           "You can see a small island floating in the middle.\n")
     choice = input("Do you choose to swim across or wait for a boat? (swim/wait) ")
-    if choice == "swim" or "Swim" or "SWIM":
+    if choice == "swim" or choice == "Swim":
         print("A trout surges upward and attacks you! Game over.")
-    elif choice == "wait" or "Wait" or "WAIT":
+    elif choice == "wait" or choice == "Wait":
         print("A woman pulls up in a fishing boat an hour later.\n"
               "She tells you that the island is rumored to have treasure on it.\n"
               "She offers to take you there if you give her a portion of the treasure.\n"
               "She takes you across.You explore for a while until you come across a passageway with 3 doorways.")
         choice = input("Which door do you choose? (red/yellow/blue) ")
-        if choice == "red" or "Red" or "RED":
+        if choice == "red" or choice == "Red":
             print("You trigger a booby trap and get burned by fire! Game over.")
-        elif choice == "yellow" or "Yellow" or "YELLOW":
+        elif choice == "yellow" or choice == "Yellow":
             print("Piles of gold lay all around. You win!")
-        elif choice == "blue" or "Blue" or "BLUE":
+        elif choice == "blue" or choice == "Blue":
             print("You hear a loud growl and don't have time to react before a beast lunges upon you. Game over.")
         else:
             print("That is the wrong input. Game over.")
