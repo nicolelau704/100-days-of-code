@@ -25,7 +25,7 @@ elif size =="M":
         bill += 3
     if extra_cheese == "Y":
         bill += 1
-else:
+elif size == "L":
     bill += 25
 
     #Check what toppings the user wanted and add it to the bill
@@ -33,6 +33,8 @@ else:
         bill += 3
     if extra_cheese == "Y":
         bill += 1
+else:
+    print("You typed the wrong inputs.")
 
 #Display the total bill to the user
 print(f"The total bill for your pizza is ${bill}.")
