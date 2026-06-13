@@ -48,13 +48,13 @@ result = "You win!"
 if user_choice == computer_choice:
     result = "It's a draw!"
 elif user_choice == 0: #rock
-    if computer_choice == 1:
+    if computer_choice == 1: #paper
         result = "You lose."
-elif user_choice == 1:
-    if computer_choice == 2:
+elif user_choice == 1: #paper
+    if computer_choice == 2: #scissors
         result = "You lose."
-elif user_choice == 2:
-    if computer_choice == 0:
+elif user_choice == 2: #scissors
+    if computer_choice == 0: #rock
         result = "You lose."
 else:
     print("It was inconclusive.")
