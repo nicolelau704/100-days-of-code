@@ -53,9 +53,11 @@ def caesar(direction_code, original_text, shift_amount):
 #Combine the 2 functions into one more concise function
 def caesar2(direction_code, original_text, shift_amount):
     output_text = ""
+    if direction_code == "decode":
+        shift_amount *= -1  # the variable is now negative so it can be subtracted
+
     for letter in original_text:
-        if direction_code == "decode":
-            shift_amount *= -1 #the variable is now negative so it can be subtracted
+
         shifted_position = alphabet.index(letter) + shift_amount
         shifted_position %= len(alphabet)
         output_text += alphabet[shifted_position]
