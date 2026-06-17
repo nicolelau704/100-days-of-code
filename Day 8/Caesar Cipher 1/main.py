@@ -9,6 +9,7 @@ shift = int(input("Type the shift number:\n"))
 def encrypt(original_text, shift_amount):
     # 2: Inside the 'encrypt()' function, shift each letter of the 'original_text' forwards in the alphabet
     #  by the shift amount and print the encrypted text.
+    # 4: What happens if you try to shift z forwards by 9? Can you fix the code?
     original_index = 0
     adjusted_index = 0
     encrypted_text = ""
@@ -20,12 +21,13 @@ def encrypt(original_text, shift_amount):
             else:
                 adjusted_index = original_index + shift_amount - len(alphabet)
                 encrypted_text += alphabet[adjusted_index]
+                #alternate version
+                #adjusted_index = (original_index + shift_amount) % len(alphabet)
         else:
             print("Sorry, that's not a valid letter.")
 
     print(f"Here is the encoded result: {encrypted_text}")
 
-    # 4: What happens if you try to shift z forwards by 9? Can you fix the code?
 
 # 3: Call the 'encrypt()' function and pass in the user inputs. You should be able to test the code and encrypt a
 #  message.
