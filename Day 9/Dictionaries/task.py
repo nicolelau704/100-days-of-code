@@ -16,3 +16,7 @@ my_empty_dictionary = {}    #create an empty dictionary
 
 colours["peach"] = "pink"   #add to dictionary
 colours["apple"] = "maroon" #change dictionary entry
+
+for key in programming_dictionary:
+    print(key)
+    print(programming_dictionary[key] + "\n")
