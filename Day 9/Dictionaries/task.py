@@ -18,5 +18,5 @@ colours["peach"] = "pink"   #add to dictionary
 colours["apple"] = "maroon" #change dictionary entry
 
 for key in programming_dictionary:
-    print(key)
-    print(programming_dictionary[key] + "\n")
+    print(key)  #get the keys
+    print(programming_dictionary[key] + "\n") #get the values
