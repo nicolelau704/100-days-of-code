@@ -14,5 +14,6 @@ def format_name2 (f_name, l_name):
 
     return output_string
 
+#print the name with the first letter of each capitalized
 format_name("flynn","dog")
 print(format_name2("dash", "dog"))
