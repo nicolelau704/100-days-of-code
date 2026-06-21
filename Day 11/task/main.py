@@ -10,7 +10,7 @@ def get_card():
 #Calculate the value of a hand of cards
 def score_value (hand):
     if sum(hand) > 21 and 11 in hand:
-        # If there is an Ace in the user's hand, then convert the value from 11 to 1 so they are no longer over 21
+        # If there is an Ace in the hand, then convert the value from 11 to 1 so they are no longer over 21
         hand.remove(11)
         hand.append(1)
 
