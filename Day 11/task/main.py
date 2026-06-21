@@ -69,12 +69,12 @@ def blackjack():
             end_game = True
 
     # Display the final hands of both the user and computer
-    print(f"Your final hand: {user_hand}, Final score: {score_value(user_hand)}")
-    print(f"Computer's final hand: {computer_hand}, Final score: {score_value(computer_hand)}")
-
-    # Display who won
     user_score = score_value(user_hand)
     computer_score = score_value(computer_hand)
+    print(f"Your final hand: {user_hand}, Final score: {user_score}")
+    print(f"Computer's final hand: {computer_hand}, Final score: {computer_score}")
+
+    # Display who won
     print(who_won(user_score, computer_score))
 
 # Ask user if they want to play again
