@@ -18,13 +18,13 @@ def score_value (hand):
 
 #Determine the winner
 def who_won (user, computer):
-    if score_value(user) > 21:
+    if user > 21:
         return "You went over. You lose! 😭"
-    elif score_value(computer) > 21:
+    elif computer > 21:
         return "Opponent went over. You win! 😊"
-    elif score_value(user) > score_value(computer):
+    elif user > computer:
         return "You win! 😊"
-    elif score_value(user) == score_value(computer):
+    elif user == computer:
         return "It's a draw! 😐"
     else:
         return "You lose! 😭"
@@ -38,10 +38,9 @@ def blackjack():
     computer_hand = []
 
     #Populate two cards for the user and one for the computer
-    if len(user_hand) == 0 and len(computer_hand) == 0:
-        user_hand.append(get_card())
-        user_hand.append(get_card())
-        computer_hand.append(get_card())
+    user_hand.append(get_card())
+    user_hand.append(get_card())
+    computer_hand.append(get_card())
 
     #Keep playing game
     end_game = False
@@ -74,7 +73,9 @@ def blackjack():
     print(f"Computer's final hand: {computer_hand}, Final score: {score_value(computer_hand)}")
 
     # Display who won
-    print(who_won(user_hand, computer_hand))
+    user_score = score_value(user_hand)
+    computer_score = score_value(computer_hand)
+    print(who_won(user_score, computer_score))
 
 # Ask user if they want to play again
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
