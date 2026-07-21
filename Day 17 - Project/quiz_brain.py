@@ -6,15 +6,18 @@ class QuizBrain:
         self.score = 0
 
     def still_has_questions(self):
+        """Checks if there are still questions left to ask"""
         return self.question_number < len(self.questions_list)
 
     def next_question(self):
+        """Display the questions and get the user's response"""
         current_question = self.questions_list[self.question_number]
         self.question_number += 1
         guess = input(f"Q{self.question_number}: {current_question.text} (True/False)?: ")
         self.check_answer(guess, current_question.answer)
 
     def check_answer(self, user_answer, correct_answer):
+        """Checks that the user's answer is correct then adjusts the score"""
         if user_answer.lower() == correct_answer.lower():
             print("You got it right!")
             self.score += 1
@@ -28,5 +31,6 @@ class QuizBrain:
             self.display_results()
 
     def display_results(self):
+        """Display the final score"""
         print("You've completed the quiz.")
         print(f"Your final score was {self.score}/{self.question_number}.")
