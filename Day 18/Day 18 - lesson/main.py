@@ -34,19 +34,19 @@ def random_color():
 #     tim.pendown()
 
 #Draw a triangle, square, pentagon, hexagon, heptagon, octagon, nonagon, and decagon in different colors
-# corners = 3
-# color_count = 0
-# colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"]
-#
-# while corners < 11:
-#     angle = 360/corners
-#     tim.pencolor(colors[color_count])
-#     for _ in range(corners):
-#         tim.forward(40)
-#         tim.right(angle)
-#         tim.forward(40)
-#     corners += 1
-#     color_count += 1
+corners = 3
+color_count = 0
+colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"]
+
+while corners < 11:
+    angle = 360/corners
+    tim.pencolor(colors[color_count])
+    for _ in range(corners):
+        tim.forward(40)
+        tim.right(angle)
+        tim.forward(40)
+    corners += 1
+    color_count += 1
 
 #Random walk at a quicker speed
 # direction = ["right", "left", "forward", "back"]
@@ -55,7 +55,7 @@ def random_color():
 # tim.pensize(10)
 # tim.speed(10)
 #
-# for _ in range(100):
+# for _ in range(600):
 #     tim.color(random.choice(colors))
 #     where = random.choice(direction)
 #     if where == "right":
@@ -91,15 +91,15 @@ def random_color():
 #     tim.forward(20)
 
 #Draw a spirograph with repeating circles that stops before the circles start overlapping
-tim.speed(0)
-original_position = tim.position()
-gap = 10
-
-for _ in range(int(360/gap)):
-    tim.pencolor(random_color())
-    tim.circle(100)
-    tim.left(gap)
-
+# tim.speed(6)
+# original_position = tim.position()
+# gap = 10
+#
+# for _ in range(int(360/gap)):
+#     tim.pencolor(random_color())
+#     tim.circle(100)
+#     tim.left(gap)
+#
 
 
 
