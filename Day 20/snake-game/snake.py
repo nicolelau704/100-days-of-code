@@ -3,11 +3,16 @@ import time
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
     def __init__(self):
         self.segments = []
         self.create_body()
+        self.head = self.segments[0]
 
     def create_body(self):
         for position in STARTING_POSITIONS:
@@ -16,17 +21,22 @@ class Snake:
             segment.penup()
             segment.goto(position)
             self.segments.append(segment)
+
     def up(self):
-        self.segments[0].setheading(90)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def down(self):
-        self.segments[0].setheading(270)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
 
     def left(self):
-        self.segments[0].setheading(180)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def right(self):
-        self.segments[0].setheading(0)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
 
     def move(self):
         #Move each body segment to the body segment before its position. Move the 1st to a new position
@@ -35,4 +45,4 @@ class Snake:
             new_y = self.segments[seg_num - 1].ycor()    #gets y coordinate for segment before it
             self.segments[seg_num].goto(new_x, new_y)    #moves the segment to the position of the segment before it
 
-        self.segments[0].forward(MOVE_DISTANCE)     #moves segment 1
+        self.head.forward(MOVE_DISTANCE)     #moves segment 1
