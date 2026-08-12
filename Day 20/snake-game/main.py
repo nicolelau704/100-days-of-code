@@ -16,6 +16,7 @@ my_scoreboard = Scoreboard()
 my_snake = Snake()
 my_food = Food()
 
+#Allow the program to accept inputs from the user to control the snake's movement
 screen.listen()
 screen.onkey(fun=my_snake.up,key="Up")
 screen.onkey(fun=my_snake.down,key="Down")
@@ -32,13 +33,22 @@ while game_is_on:
     my_snake.move()
 
     #Detect collision with food
-    if my_snake.head.distance(my_food) < 15: #if the snake head is within 15 pixels of the food then
+    if my_snake.head.distance(my_food) < 15: #checks if the snake head is within 15 pixels of the food
         my_food.refresh()
+        my_snake.extend()
         my_scoreboard.update_score()
 
     #Detect collision with wall
-    if my_snake.head.xcor() > 280 or my_snake.head.xcor() < -280 or my_snake.head.ycor() > 280 or my_snake.head.ycor() < -280:
+    if my_snake.head.xcor() > 280 or my_snake.head.xcor() < -280 or my_snake.head.ycor() > 270 or my_snake.head.ycor() < -280:
         game_is_on = False
         my_scoreboard.game_over()
+
+    #Detect collision with tail
+    for segment in my_snake.segments:
+        if segment == my_snake.head:
+            pass
+        elif my_snake.head.distance(segment) < 10:
+            game_is_on = False
+            my_scoreboard.game_over()
 
 screen.exitonclick()
