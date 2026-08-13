@@ -15,6 +15,7 @@ class CarManager:
         self.speed = STARTING_MOVE_DISTANCE
 
     def create_car(self):
+        #Create a random colored car somewhere along the right side of the screen
         random_chance = random.randint(1,6)
         if random_chance == 1:
             new_car = Turtle()
@@ -26,8 +27,10 @@ class CarManager:
             self.all_cars.append(new_car)
 
     def move_car(self):
+        #Move the cars from the right side of the screen to the left
         for car in self.all_cars:
             car.backward(self.speed)
 
     def level_up(self):
+        #Increase the speed of the car
         self.speed += MOVE_INCREMENT

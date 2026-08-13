@@ -12,11 +12,19 @@ class Player(Turtle):
         self.penup()
         self.color("green")
         self.setheading(90)
-        self.goto(STARTING_POSITION)
-        self.finish_line_y = FINISH_LINE_Y
+        self.go_to_start()
 
     def up(self):
+        #Move the turtle
         self.forward(MOVE_DISTANCE)
 
-    def level_up(self):
+    def go_to_start(self):
+        #Place the turtle in the starting position
         self.goto(STARTING_POSITION)
+
+    def is_at_finish_line(self):
+        #Checks if the turtle is at the top of the screen
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            return False
