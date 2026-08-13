@@ -30,7 +30,7 @@ screen.onkey(fun=left_paddle.down,key="s")
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
 
     ball.move()
 
@@ -52,5 +52,9 @@ while game_is_on:
         ball.reset_ball()
         scoreboard.r_point()
 
+    #The game ends when someone reaches 5 points
+    if scoreboard.l_score == 5 or scoreboard.r_score == 5:
+        scoreboard.game_over()
+        game_is_on = False
 
 screen.exitonclick()

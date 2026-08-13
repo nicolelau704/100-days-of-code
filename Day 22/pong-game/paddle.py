@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-MOVE_DISTANCE = 30
+MOVE_DISTANCE = 40
 UP = 90
 DOWN = 270
 
@@ -16,12 +16,15 @@ class Paddle(Turtle):
         self.goto(starting_position)
 
     def up(self):
+        #Move up
         self.setheading(UP)
         self.move()
 
     def down(self):
+        #Move Down
         self.setheading(DOWN)
         self.move()
 
     def move(self):
-          self.forward(MOVE_DISTANCE)
+        #Moves
+        self.forward(MOVE_DISTANCE)
