@@ -13,6 +13,10 @@ class Player(Turtle):
         self.color("green")
         self.setheading(90)
         self.goto(STARTING_POSITION)
+        self.finish_line_y = FINISH_LINE_Y
 
     def up(self):
         self.forward(MOVE_DISTANCE)
+
+    def level_up(self):
+        self.goto(STARTING_POSITION)
