@@ -54,3 +54,11 @@ class Snake:
             self.segments[seg_num].goto(new_x, new_y)    #moves the segment to the position of the segment before it
 
         self.head.forward(MOVE_DISTANCE)     #moves segment 1
+
+    def reset_game(self):
+        for part in self.segments:
+            part.goto(1000,1000)
+
+        self.segments.clear()
+        self.create_body()
+        self.head = self.segments[0]

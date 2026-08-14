@@ -39,14 +39,26 @@ while game_is_on:
         my_scoreboard.update_score()
 
     #Detect collision with wall
-    if my_snake.head.xcor() > 280 or my_snake.head.xcor() < -280 or my_snake.head.ycor() > 270 or my_snake.head.ycor() < -280:
-        game_is_on = False
-        my_scoreboard.game_over()
+    if my_snake.head.xcor() > 280 or my_snake.head.xcor() < -298 or my_snake.head.ycor() > 265 or my_snake.head.ycor() < -280:
+
+        #Day 20 - Display game over message
+        #game_is_on = False
+        #my_scoreboard.game_over()
+
+        #Day 24 - Restart the game
+        my_scoreboard.reset_game()
+        my_snake.reset_game()
 
     #Detect collision with tail
-    for segment in my_snake.segments[1:]:
+    for segment in my_snake.segments[2:]:
         if my_snake.head.distance(segment) < 10:
-            game_is_on = False
-            my_scoreboard.game_over()
+
+            #Day 20 - Display game over message
+            #game_is_on = False
+            #my_scoreboard.game_over()
+
+            #Day 24 - Restart the game
+            my_scoreboard.reset_game()
+            my_snake.reset_game()
 
 screen.exitonclick()
