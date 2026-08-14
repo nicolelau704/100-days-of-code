@@ -13,7 +13,13 @@ class Scoreboard(Turtle):
         self.penup()
         self.hideturtle()
         self.goto(0,275)
+        self.get_high_score()
         self.get_score()
+
+    def get_high_score(self):
+        #Read the data.txt file for the high score value and save it as an integer
+        with open("data.txt") as file:
+            self.high_score = int(file.read())
 
     def get_score(self):
         #Display the score at the top of the screen
@@ -36,6 +42,10 @@ class Scoreboard(Turtle):
         if self.score > self.high_score:
             #The current score is now the new high score
             self.high_score = self.score
+
+            #Update the high score in the data.txt file
+            with open("data.txt", mode="w") as file:
+                file.write(f"{self.high_score}")
 
         #Reset the score to 0 for the next game
         self.score = 0
