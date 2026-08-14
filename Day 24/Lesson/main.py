@@ -18,5 +18,10 @@
 #     file.write("\nNew text.")
 
 #Create a new file by opening a file in write mode
-with open("new_file.txt", mode="w") as file:
-    file.write("This is my new file.")
+# with open("new_file.txt", mode="w") as file:
+#     file.write("This is my new file.")
+
+#Read the file when it's located in a different place
+with open("../Lesson/new_file.txt") as file:
+    contents = file.read()
+    print(contents)
