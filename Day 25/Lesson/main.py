@@ -19,8 +19,8 @@
 #     print(temperatures)
 
 #Use Pandas to open, read, and display information from the csv file
-import pandas
-data = pandas.read_csv("weather_data.csv")
+# import pandas
+# data = pandas.read_csv("weather_data.csv")
 
 #print just a column of the data
 # print(data["temp"])
@@ -58,15 +58,21 @@ data = pandas.read_csv("weather_data.csv")
 # monday = data[data.day == "Monday"]
 # print(monday.condition)
 
-#convert monday's temperature to fahrenheit
+#convert Monday's temperature to Fahrenheit
 # temp = (monday.temp * (9/5)) + 32
 # print(temp)
 
 #create a dataframe from scratch
-data_dict = {
-    "students": ['Amy', 'James', 'Angela'],
-    "scores": [76, 56, 65]
-}
+# data_dict = {
+#     "students": ['Amy', 'James', 'Angela'],
+#     "scores": [76, 56, 65]
+# }
+#
+# data2 = pandas.DataFrame(data_dict)
+# data2.to_csv("new_data.csv")
 
-data2 = pandas.DataFrame(data_dict)
-data2.to_csv("new_data.csv")
+#Create a dataframe of how many of each squirrel color there is in central park 2018
+import pandas
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+print(data["Primary Fur Color"])
