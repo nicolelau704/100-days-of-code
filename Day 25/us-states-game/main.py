@@ -27,6 +27,9 @@ while len(guesses) < 50:
     #Get guess from user and display how many they've already gotten correct
     guess = (screen.textinput(title=f"{len(guesses)}/50 States Correct", prompt="What's another state's name?")).title()
 
+    if guess == "Exit":
+        break
+
     #Check if the guess matches any of the states in the list
     for state in data["state"]:
         #If the guess is correct
@@ -47,3 +50,13 @@ while len(guesses) < 50:
 #Display "you win" message
 if len(guesses) == 50:
     writer.write("YOU WIN!")
+
+#Create a CSV file of what states the user still needs to learn
+all_states = data["state"].to_list()
+
+for state in guesses:
+    if state in all_states:
+        all_states.remove(state)
+
+states_needed = pandas.DataFrame(all_states)
+states_needed.to_csv("states_to_learn.csv")
