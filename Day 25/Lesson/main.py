@@ -108,7 +108,7 @@ cin_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
 blk_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
 
 data_dict = {
-    "Fur Color": ["Gray", "Cinnamon", "BlacK"],
+    "Fur Color": ["Gray", "Cinnamon", "Black"],
     "Count": [gray_squirrels_count, cin_squirrels_count, blk_squirrels_count],
 }
 
