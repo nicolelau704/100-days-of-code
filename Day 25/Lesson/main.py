@@ -72,7 +72,45 @@
 # data2.to_csv("new_data.csv")
 
 #Create a dataframe of how many of each squirrel color there is in central park 2018
-import pandas
+# import pandas
+# data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+#
+# #Create a dictionary to hold data
+# refined_data = {
+#     "Fur Colors": [],
+#     "Count":[],
+# }
+#
+# #Add each fur color type into a list then add it to the dictionary
+# fur_types = data["Primary Fur Color"].unique()
+# for fur in fur_types[1:]:
+#     refined_data["Fur Colors"].append(fur)
+#
+# #Determine how many of each color there is, add it to a list, then add it to the dictionary
+# fur_colors = data["Primary Fur Color"].to_list()
+# fur_count = []
+# for item in fur_types:
+#     fur_count.append(fur_colors.count(item))
+#
+# for count in fur_count[1:]:
+#     refined_data["Count"].append(count)
+#
+# #Create the csv file with the acquired data
+# final_data = pandas.DataFrame(refined_data)
+# final_data.to_csv("squirrel_data.csv")
 
+#Alternative solution
+import pandas
 data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-print(data["Primary Fur Color"])
+
+gray_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
+cin_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
+blk_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
+
+data_dict = {
+    "Fur Color": ["Gray", "Cinnamon", "BlacK"],
+    "Count": [gray_squirrels_count, cin_squirrels_count, blk_squirrels_count],
+}
+
+df = pandas.DataFrame(data_dict)
+df.to_csv("squirrel_data.csv")
